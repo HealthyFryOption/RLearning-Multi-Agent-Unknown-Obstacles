@@ -1,5 +1,4 @@
 {
-    "frameRate": 0.0001,
     "runWithGUI":true,
     "selectedMap":"easy2",
     "actions": ["f", "b", "l", "r", "lf", "rf", "lb", "rb"],

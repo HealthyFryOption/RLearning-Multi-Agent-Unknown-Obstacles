@@ -46,7 +46,6 @@ with open(miscDirectory + mapDesignFile, 'r') as mapF:
 
 goalReached = False
 mapSettings = mapSettings[selectedMap]
-frameRate = systemSetting["frameRate"]
 multiConfig = systemSetting["multi"]
 actions = systemSetting["actions"]
 runWithGUI = systemSetting["runWithGUI"]
@@ -92,13 +91,6 @@ def keyboardThread():
 def spinCursorAnimation():
     for cursor in itertools.cycle('|/-\\'):
         yield cursor
-
-def pauseDelta():
-    # Pause loop by delta time and set frameRate
-    start_time = time.time()
-    elapsed_time = time.time() - start_time
-    remaining_time = max(0, frameRate - elapsed_time)
-    time.sleep(remaining_time)
 
 def saveModel(modelParam=None, extraName=""):
     # Get list of files in the directory
