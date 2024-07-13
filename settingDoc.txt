@@ -1,0 +1,51 @@
+"runWithGUI": true / false | To set whether simulation(s) are required to show NetLogo GUI. Potentially increasing / decreasing performance
+"selectedMap":  "mapName" from mapDesigns.json)| To choose map for simulations
+"actions": ['actionName', ...] | The string representation of possible actions by agent(s)
+"actionsNextStateMovement": [ [int, int], ... ] | The x y changes to agent(s)' state when chosen an action from 'actions'. The position (index) of the inner array must be the same with its string representation in 'actions'
+
+"alpha": float | alpha rate of training
+"gamma": float | gamma value of training
+"epsilon": float | starting epsilon value
+"baseEpsilon":float | minimum epsilon value
+"epsilonDecreaseRate": float | epsilon decay rate from starting to minimum value
+
+"multi":{
+    # To set multi-simulation mode.
+
+    "run":  true / false | If false, a single instance that runs for a single epoch will be ran. Inside this experimental mode, you can pause via pressing 'p', 'q' to quit simulation, and 's' to save model / recording. If true, multi-simulation will be ran
+
+    "threads": int | how many threads / simulation to run under one epoch or round
+    "threadsPerRound": int | how many threads / simulation allowed to run simultaneously. Adjustable based on hardware performance capability
+
+    "maxSimulationEpoch": int | For how many epochs will the simulation run for. Every subsequent epoch, each instances or threads will use their own previously trained parameters
+    "maxIterationPerSimulation": int | The maximum iteration allowed for a single thread to run for. If exceeded, will be marked as not being able to reach goal point
+},
+
+"fireflySettings":{
+    # Settings for Firefly Mode
+
+    "draw": true / false | To draw brightness or not in NetLogo
+    "debug": true / false | To give further information accompanying brightness drawn or not in NetLogo
+    
+    "fireflyMode": true / false | To use Firefly Mode or not. If not use, Pure Q-Learning is used
+    "poiRadius": int | The maximum tiles brightness can disperse and cover from the center of an agent
+    "onlyObstaclesMode": true / false | To run Firefly Mode only when agents are around obstacles
+    
+    "fireflyK": float | k value for Gaussian Curve Function for Firefly POI reward value
+    "fireflyMaxReward": float | maximum value possible for Firefly POI reward value
+},
+
+"rewardParam":{
+    # Reward Weightage used for Firefly Modes
+
+    "distance": float | weightage for distance based reward value
+    "obstaclesAround": float | weightage for penalty received for obstacles around
+    "poi": float | weightage for POI based reward value
+},
+
+"rewardParamNormal":{
+    # Reward Weightage used for Pure Q-Learning Mode
+
+    "distance": float | weightage for distance based reward value
+    "obstaclesAround": float | weightage for penalty received for obstacles around
+}
