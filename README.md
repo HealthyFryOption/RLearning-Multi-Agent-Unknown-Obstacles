@@ -42,13 +42,13 @@ All training / simulation runs relies on the parameters set in setting.json. Doc
          [...]
        ]
    }
-   ```
 
-Within the [...], will be numbers with values:
-* 0: blank / open tiles
-* 1: obstacle
-* 2: agent
-* 9: goal point
+   Within the [...], will be numbers with values:
+      * 0: blank / open tiles
+      * 1: obstacle
+      * 2: agent
+      * 9: goal point
+   ```
 
 5) Analysis folder contains data graphing code which will be used to graph out data stored in directory Track/NM.
    Note changes can be made, and NM stands for 'New Model'. Customize as desired.
