@@ -1,0 +1,45 @@
+{
+    "frameRate": 0.0001,
+    "runWithGUI":true,
+    "selectedMap":"easy2",
+    "actions": ["f", "b", "l", "r", "lf", "rf", "lb", "rb"],
+    "actionsNextStateMovement": [[0, 1], [0, -1], [-1, 0], [1, 0], [-1, 1], [1, 1], [-1, -1], [1, -1]],
+    
+    "alpha":0.3,
+    "gamma":0.8,
+    "epsilon":0.35,
+    "baseEpsilon": 0.15,
+    "epsilonDecreaseRate": 0.0005,
+
+    "multi":{
+        "run": true,
+
+        "threads": 30,
+        "threadsPerRound": 15,
+
+        "maxSimulationEpoch": 8,
+        "maxIterationPerSimulation": 25000
+    },
+
+    "fireflySettings":{
+        "draw": true,
+        "debug":false,
+        
+        "fireflyMode": true,
+        "poiRadius": 3,
+        "onlyObstaclesMode":false,
+        
+        "fireflyK": 0.08,
+        "fireflyMaxReward":0.5
+    },
+
+    "rewardParam":{
+        "distance": 0.6,
+        "obstaclesAround": 0.2,
+        "poi": 0.2
+    },
+    "rewardParamNormal":{
+        "distance": 0.8,
+        "obstaclesAround": 0.2
+    }
+}
