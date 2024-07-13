@@ -1,5 +1,5 @@
 "runWithGUI": true / false | To set whether simulation(s) are required to show NetLogo GUI. Potentially increasing / decreasing performance
-"selectedMap":  "mapName" from mapDesigns.json)| To choose map for simulations
+"selectedMap":  "mapName" from mapDesigns.json| To choose map for simulations
 "actions": ['actionName', ...] | The string representation of possible actions by agent(s)
 "actionsNextStateMovement": [ [int, int], ... ] | The x y changes to agent(s)' state when chosen an action from 'actions'. The position (index) of the inner array must be the same with its string representation in 'actions'
 
