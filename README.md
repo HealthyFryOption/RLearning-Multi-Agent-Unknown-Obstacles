@@ -28,9 +28,7 @@ All training / simulation runs relies on the parameters set in setting.json. Doc
    python Main.py
    ```
 
-2) It will ask whether to use a New or Old model. Any old trained models must be placed inside Model directory. Key in 'Y' if desired to run simulations with a trained model. The system will then require a version number. Provide related version number. For example, provide '2' to use model_2.json.
-
-Should you want to run simulations without a pre-trained model, Key in 'N'. Once the simulation end, if a model is saved it will automatically be added into Model directory, with a version number accompanying it. The version number given is the highest version number currently existing inside the directory, incremented by 1. 
+2) It will ask whether to use a New or Old model. Any old trained models must be placed inside Model directory. Key in 'Y' if desired to run simulations with a trained model. The system will then require a version number. Provide related version number. For example, provide '2' to use model_2.json. Should you want to run simulations without a pre-trained model, Key in 'N'. Once the simulation end, if a model is saved it will automatically be added into Model directory, with a version number accompanying it. The version number given is the highest version number currently existing inside the directory, incremented by 1. 
 
 3) If the simulation is running under multi-simulations, at the last iteration, all instances will save their recording of simulation inside Recording directory.
 
