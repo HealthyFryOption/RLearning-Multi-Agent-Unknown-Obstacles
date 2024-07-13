@@ -33,6 +33,7 @@ All training / simulation runs relies on the parameters set in setting.json. Doc
 3) If the simulation is running under multi-simulations, at the last iteration, all instances will save their recording of simulation inside Recording directory.
 
 4) Any new map to be created must be created inside mapDesigns.json following the format of
+   ```
    "mapName":{
       "mapWidth": int value,
       "mapHeight":  int value,
@@ -41,6 +42,7 @@ All training / simulation runs relies on the parameters set in setting.json. Doc
          [...]
        ]
    }
+   ```
 
 Within the [...], will be numbers with values:
 * 0: blank / open tiles
