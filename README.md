@@ -11,7 +11,7 @@ It is used to experiment the feasability of implementing Cooperative Q-Learning 
 2) Create a netlogo file / instance.
 3) Pip install all required libraries from requirements.txt via
    ```
-   pip install -r /path/to/requirements.txt
+   pip install -r ./requirements.txt
    ```
 
 ### Usage Manual
