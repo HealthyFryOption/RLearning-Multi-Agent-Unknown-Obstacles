@@ -74,7 +74,7 @@ agents = []
 
 # ===== System Run Variables / Processes =====
 key = ""
-pause = True
+pause = False
 running = True
 # ===== System Run Variables =====
 
