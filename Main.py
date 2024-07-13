@@ -221,7 +221,8 @@ if __name__ == "__main__":
 
     if input("\nUse Old Model? (Y/N)\n").strip().capitalize() == "Y":
         version = input("Give version (INT): ")
-        modelName = modelNamePrefix + version + ".json"
+        modelBaseName = modelNamePrefix + version + ".json"
+        modelName = modelBaseName
 
         # Read the JSON file (add new extra prefixes to check here). For example, NM refers to the naming format NMmodel_VERSIONNUMBER.json
         extraName = ["NM", 'L', 'M', 'H']
@@ -240,7 +241,7 @@ if __name__ == "__main__":
                 if index >= len(extraName):
                     raise(f"No model file was found for given version") 
                 
-                modelName = extraName[index] + modelName
+                modelName = extraName[index] + modelBaseName
                 index += 1
 
         # Convert list values to NumPy arrays
@@ -422,10 +423,7 @@ if __name__ == "__main__":
 
                 if goalReached:
                     running = False
-                    # Wait for threads to gracefully close
-                    threads.join()
-
-                    print("Goal point has been reached")
+                    print("Goal point has been reached\nPress any key to continue")
             
         # Wait for threads to gracefully close
         threads.join()

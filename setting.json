@@ -13,10 +13,10 @@
     "multi":{
         "run": true,
 
-        "threads": 30,
-        "threadsPerRound": 15,
+        "threads": 10,
+        "threadsPerRound": 5,
 
-        "maxSimulationEpoch": 8,
+        "maxSimulationEpoch": 3,
         "maxIterationPerSimulation": 25000
     },
 
