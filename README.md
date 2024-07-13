@@ -9,7 +9,7 @@ The Firefly Algorithm concept is implemented via the creation of POIs (Points of
 
 ## Pre-Requisites
 1) Download NetLogo and all its related programs. The version during the development of this project is Netlogo 6.4.0
-2) Create a NetLogo file / instance
+2) Create a NetLogo file / instance in the current directory
 3) Pip install all required libraries from requirements.txt via
    ```
    pip install -r ./requirements.txt
@@ -22,7 +22,7 @@ The Firefly Algorithm concept is implemented via the creation of POIs (Points of
    * Track/NM
 5) Create a .env file, containing the variable name netlogoHomeDirectory and netLogoModelFile:
    * netlogoHomeDirectory contains the path to your locally downloaded Netlogo program
-   * netLogoModelFile contains the path and name of your Netlogo created File / Instance
+   * netLogoModelFile contains the name of your Netlogo created File / Instance
 
 ## Usage Manual
 All training / simulation runs relies on the parameters set in setting.json. Documentation related to the setting.json's fields are provided inside setting documentation named "settingDoc.txt"
