@@ -34,7 +34,7 @@ All training / simulation runs relies on the parameters set in setting.json. Doc
 
 2) It will ask whether to use a New or Old model. Any old trained models must be placed inside Model directory. Key in 'Y' if desired to run simulations with a trained model. The system will then require a version number. Provide related version number. For example, provide '2' to use model_2.json. Should you want to run simulations without a pre-trained model, Key in 'N'. Once the simulation end, if a model is saved it will automatically be added into Model directory, with a version number accompanying it. The version number given is the highest version number currently existing inside the directory, incremented by 1. 
 
-3) If the simulation is running under multi-simulations, at the last iteration, all instances will save their recording of simulation inside Recording directory as mp4 files with the format {instance number}_record.mp4 in multi-simulation mode, or NEW_record.mp4 in non multi-simulation mode.
+3) If the simulation is running under multi-simulations, at the last iteration, all instances will save their recording of simulation inside Recording directory as mp4 files with the format {instance number}_record.mp4 in multi-simulation mode, or NEW_record.mp4 in non multi-simulation mode. Furthermore, after every multi-simulation runs, the iteration data of all previous epochs and of each instances will be saved as a .json file inside Records. The best model from all instances at the last iteration will be chosen as the model to be saved inside Model.
 
 4) Any new map to be created must be created inside mapDesigns.json following the format of
    ```
