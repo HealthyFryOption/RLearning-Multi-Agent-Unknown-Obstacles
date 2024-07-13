@@ -5,8 +5,7 @@ This repository is used to test out 2D tile-based simulations for multi-agent Q-
 
 It is used to experiment the feasability of implementing Cooperative Q-Learning Multi-Agent systems with concepts of brightness borrowed from the Firefly Algorithm. Ultimately, to gauge how good does the Bio-Inspired algorithm increase cooperativeness between agents as well as improve training efficiency by lowering iterations needed for agents to reach a goal point.
 
-## How to use it
-### Pre-Requisites
+## Pre-Requisites
 1) Download NetLogo and all its related programs. The version during the development of this project is Netlogo 6.4.0
 2) Create a netlogo file / instance.
 3) Pip install all required libraries from requirements.txt via
@@ -20,7 +19,7 @@ It is used to experiment the feasability of implementing Cooperative Q-Learning 
    * Track
    * Track/NM
 
-### Usage Manual
+## Usage Manual
 All training / simulation runs relies on the parameters set in setting.json. Documentation related to the setting.json's fields are provided inside setting documentation named "settingDoc.txt"
 
 1) To run the system
