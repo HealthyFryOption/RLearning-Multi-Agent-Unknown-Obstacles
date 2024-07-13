@@ -1,6 +1,6 @@
 # Reinforcement Learning for Multi-Agent Coordination in Environments with Unknown Obstacles
 
-## What is the project about
+## What is this project about
 This repository is used to test out 2D tile-based simulations for multi-agent Q-Learning that is implemented with Firefly Algorithm's concepts via Netlogo. The base code is all written in Python.
 
 It is used to experiment the feasability of implementing Cooperative Q-Learning Multi-Agent systems with concepts of brightness borrowed from the Firefly Algorithm. Ultimately, to study how a chosen Bio-Inspired algorithm will influence cooperativeness between agents as well as training efficiency through gauging iterations needed for agents to reach a goal point.
