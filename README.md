@@ -5,6 +5,8 @@ This repository is used to test out 2D tile-based simulations for multi-agent Q-
 
 It is used to experiment the feasability of implementing Cooperative Q-Learning Multi-Agent systems with concepts of brightness borrowed from the Firefly Algorithm. Ultimately, to study how a chosen Bio-Inspired algorithm will influence cooperativeness between agents as well as training efficiency through gauging iterations needed for agents to reach a goal point.
 
+The Firefly Algorithm concept is implemented via the creation of POIs (Points of Interest). Where every iteration, agents will shine "brightness" values that covers tiles around its center. The further the brightness is from the center, the lower the value. When brightess value from different agents collides, POIs are created. This is used during reward calculation process, where the POIs brightness values stacked by various agents' brightness are added should an agent previous state before transition be a POI.
+
 ## Pre-Requisites
 1) Download NetLogo and all its related programs. The version during the development of this project is Netlogo 6.4.0
 2) Create a NetLogo file / instance
