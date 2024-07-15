@@ -156,8 +156,6 @@ class MainInterface():
 
     def drawEnvironment(self, turtles=False):
         # turtles set weather to recreate turtle
-        # self.netLogo.command('ask patches with [(pxcor + pycor) mod 2 = 0][set pcolor 104]')
-        # self.netLogo.command('ask patches with [(pxcor + pycor) mod 2 != 0][set pcolor 105]')
         self.netLogo.command('ask patches [set pcolor 102]')
 
         self.netLogo.command(f'ask patch {self.goalPoint[0]} {self.goalPoint[1]} [ set pcolor [ 0 255 0 ] ]')
@@ -166,9 +164,6 @@ class MainInterface():
         if obstaclePatches:
             obstaclePatchesCommand = " ".join(obstaclePatches)
             self.netLogo.command(f'ask patches at-points [{obstaclePatchesCommand}] [ set pcolor black ]')
-
-        # for obstacle in self.obstacles:
-        #     self.netLogo.command(f'ask patch {obstacle.posX} {obstacle.posY} [set pcolor black]')
 
         if turtles:
             for agent in self.agents:
@@ -202,10 +197,6 @@ class MainInterface():
             for tile in debugBrightTiles:
                 tileCoords = utils.reverseStateAgentDict(tile)
                 command.append(f"ask patch {tileCoords[0]} {tileCoords[1]} [ set pcolor 25 set plabel {'{:.2f}'.format(debugBrightTiles[tile])} ]")
-                
-                # self.netLogo.command(f"""
-                #                     ask patch {tileCoords[0]} {tileCoords[1]} [ set pcolor 25 set plabel {'{:.2f}'.format(debugBrightTiles[tile])} ]
-                # """)
             self.netLogo.command(" ".join(command))
 
             command = []
@@ -213,9 +204,6 @@ class MainInterface():
             for tile in brightTiles:
                 tileCoords = utils.reverseStateAgentDict(tile)
                 command.append(f"ask patch {tileCoords[0]} {tileCoords[1]} [ set pcolor 44 set plabel {'{:.2f}'.format(brightTiles[tile])} ]")
-                # self.netLogo.command(f"""
-                #                     ask patch {tileCoords[0]} {tileCoords[1]} [ set pcolor 44 set plabel {'{:.2f}'.format(brightTiles[tile])} ]
-                # """)
             self.netLogo.command(" ".join(command))
 
         else:
@@ -354,7 +342,6 @@ class MainInterface():
 
                     # Actually call movement and update position
                     # Ask the agent to actually move to the new state
-                    # Will set agent new position, and create the NetLogo command for us
                     self.netLogo.command(agentInfo["agent_obj"].move(self.actions[agentInfo["chosenAction"]]))
 
             # Update Q-Table

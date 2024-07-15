@@ -6,27 +6,9 @@ import seaborn as sns
 
 
 def plot_data_distribution(data, trimmedMean, title, confidence_interval=0.68):
-    # Extract 'runs' values from the data
     runs = data
 
-    # Calculate statistical values
-    mean = np.mean(runs)
     median = np.median(runs)
-    std_dev = np.std(runs)
-
-    stat, p_value = stats.shapiro(runs)
-    alpha = 0.05  # Significance level
-
-    is_normal = None
-
-    print(f'Statistic: {stat}, p-value: {p_value}')
-    if p_value > alpha:
-        print("The data follows a normal distribution (fail to reject H0).")
-        is_normal = True
-    else:
-        print("The data does not follow a normal distribution (reject H0).")
-        is_normal = False
-
 
     # Plot the data distribution
     plt.figure(figsize=(12, 6))
@@ -40,11 +22,6 @@ def plot_data_distribution(data, trimmedMean, title, confidence_interval=0.68):
     plt.axvline(trimmedMean, color='orange', linestyle='-', linewidth=2, label='Trimmed Mean (10%)')
     plt.axvline(median, color='green', linestyle='-', linewidth=2, label='Median')
 
-    # Add title indicating normal distribution
-    # if is_normal:
-    #     plt.text(0.82, 0.95, 'Normally Distributed', ha='right', va='bottom', transform=plt.gca().transAxes, bbox=dict(facecolor='green', alpha=0.5))
-    # else:
-    #     plt.text(0.82, 0.95, 'Not Normally Distributed', ha='right', va='bottom', transform=plt.gca().transAxes, bbox=dict(facecolor='red', alpha=0.5))
     plt.text(0.99, 0.8, f'Median: {"{:.2f}".format(median)}', ha='right', va='bottom', transform=plt.gca().transAxes, bbox=dict(facecolor='green', alpha=0.5))
     plt.text(0.99, 0.75, f'Trimmed Mean (10%): {"{:.2f}".format(trimmedMean)}', ha='right', va='bottom', transform=plt.gca().transAxes, bbox=dict(facecolor='orange', alpha=0.5))
 
@@ -54,10 +31,8 @@ def plot_data_distribution(data, trimmedMean, title, confidence_interval=0.68):
     plt.ylabel('Frequency')
     plt.legend()
 
-    # Save the plot as an image file
     # plt.savefig(f'{title}.png', bbox_inches='tight')
 
-    # Show the plot
     plt.show()
 
 def averageAfterZScoreOutlier(data, threshold=3):
@@ -77,19 +52,14 @@ def medianTrimmedMean(runs, trim_percent=0.1):
     return median, trimmedMean
 
 if __name__ == "__main__":
-    
     MainDirectory = "./Track/NM/"
     ModeDirectory = "F with Obstacle/"
     MapDirectory = "high/"
     jsonFile = "NMRecord_1.json"
 
-    # title = "Pure Q-Learning"
-    # title = "Q-Learning with Firefly"
-    title = "Q-Learning with Firefly On-Demand (Obstacles)"
-    
-    epoch = " At Epoch 8"
-    mapTitle = " For High Complexity Map"
-    
+    title = ""
+    epoch = " "
+    mapTitle = " "
 
     title = title + epoch + mapTitle
 
@@ -128,7 +98,6 @@ if __name__ == "__main__":
     print(f"Min: {min}")
     print(f"Min ID: {minID}\n")
 
-    
     print(f"Mean: {sum(runsOnly) / len(runsOnly)}")
     print(f"Median: {median}")
     print(f"Trimmed Mean (10%): {trimmedMean}")

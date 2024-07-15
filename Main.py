@@ -55,7 +55,6 @@ rewardParamSet = {}
 if(systemSetting["fireflySettings"]["fireflyMode"]):
     rewardParamSet = systemSetting["rewardParam"]
 else:
-    # Note firefly Mode
     rewardParamSet = systemSetting["rewardParamNormal"]
 
 map = mapSettings["map"][::-1] # reverse the map order in JSON design
@@ -185,7 +184,6 @@ def runInstanceNormal(id, maxIteration, newModelParam, resultQueue, recordVid):
         if recordVid:
             netLogo.command(f'vid:save-recording "{recordingDirectory}{id}_record.mp4"')
 
-        # kill_workspace() method primarily closes the connection to the NetLogo workspace and stops any ongoing simulations or processes. Thus maybe that's why processes dont stop
         netLogo.kill_workspace()
 
         resultQueue.put({"id":id, "mapParam":mapParam, "iterations":nlMap.iterations, "reachedGoal": goalReached})
@@ -272,7 +270,7 @@ if __name__ == "__main__":
             recordVid = False
 
             if mainLoopIter == maxSimulation:
-                # Final loop, start recording every process
+                # Final loop, start recording every simulation
                 recordVid = True
 
             normalRecords[mainLoopIter] = []
@@ -340,7 +338,6 @@ if __name__ == "__main__":
                 if resultBack == numOfThread:
                     break
 
-            # print("Half processes are finished")
             time.sleep(3) 
 
             print("All processes are finished")

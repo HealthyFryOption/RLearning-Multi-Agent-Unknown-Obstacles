@@ -99,10 +99,6 @@ class ReinforcementLearningSystem():
         nextStateStr = f"({next_state[0]}, {next_state[1]})"
         if nextStateStr in self.obstacleSet:
             return False
-
-        # for obstacle in self.obstacles:
-        #     if next_state[0] == obstacle.posX and next_state[1] == obstacle.posY:
-        #         return False
         
         return True
     
@@ -240,12 +236,6 @@ class FireflyAlgo():
     def updateBrightnessForTile(self, tileToUpdate, targetPosition):
 
         # tileToUpdate is the nextstate of agents
-
-        # Using Gaussian Curve Function to return a brigthness value.
-        # the closer distance is to 0, the higher to maxvalue.
-
-        # K approaching 0 will spread out distribution more, higher will be
-        # narrower and centered around the lower values of distance
 
         distanceFromTarget = utils.getTileDistance(tileToUpdate, targetPosition)
         brightness = self.maxValue * math.exp(-self.k * distanceFromTarget)
