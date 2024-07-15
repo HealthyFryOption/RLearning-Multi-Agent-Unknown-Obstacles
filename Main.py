@@ -322,7 +322,7 @@ if __name__ == "__main__":
                         results.append(result)
                         resultBack += 1
 
-                        # Terminate process manually (NetLogo JVM won't close automatically even after calling its termination function) (Why? haha funny question!!!)
+                        # Terminate process manually 
                         processes[result["id"]].terminate()
                         
                         del processes[result["id"]]
