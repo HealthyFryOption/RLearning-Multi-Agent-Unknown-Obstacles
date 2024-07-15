@@ -106,11 +106,7 @@ class ReinforcementLearningSystem():
         state = utils.getStateAgentDict(position)
         action_index = None
 
-        if np.random.rand() < self.epsilon:
-            # return the indices of valid actions
-            # possibleActionIndices = np.where(self.q_table[state] > self.invalidActionNumber)[0]
-            # action_index = np.random.choice(possibleActionIndices)
-            
+        if np.random.rand() < self.epsilon:            
             # Choose a random action 
             action_index = np.random.choice(self.num_actions)
         elif np.all(self.q_table[state] <= 0):
