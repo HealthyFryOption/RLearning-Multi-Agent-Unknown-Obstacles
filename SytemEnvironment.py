@@ -31,7 +31,6 @@ class Agent(WorldObjects):
 
     @property
     def postion(self):
-        # return {"x": self.posX, "y": self.posY}
         return (self.posX, self.posY)
 
     def updatePosition(self, addX, addY):
@@ -155,7 +154,7 @@ class MainInterface():
         self.drawEnvironment(turtles=True)
 
     def drawEnvironment(self, turtles=False):
-        # turtles set weather to recreate turtle
+        # turtles set wether to recreate turtle
         self.netLogo.command('ask patches [set pcolor 102]')
 
         self.netLogo.command(f'ask patch {self.goalPoint[0]} {self.goalPoint[1]} [ set pcolor [ 0 255 0 ] ]')
@@ -269,7 +268,7 @@ class MainInterface():
                 continue
 
             if new_state == "invalid":
-                # New state for agents are invalid, so just add normally at first
+                # New state for agents are invalid, add normally at first
                 self.finalizedAgentUpdates.extend(
                     [agentInfo for agentInfo in agentInfos]
                 ) 

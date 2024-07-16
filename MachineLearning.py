@@ -33,8 +33,6 @@ class ReinforcementLearningSystem():
         else:
             self.createModel()
 
-        # self.printQTable("INITIALIZATION")
-
     def decreaseEpsilon(self, epsilonRate):
         self.epsilon = max(self.baseEpsilon, self.epsilon - epsilonRate)
 
@@ -130,10 +128,6 @@ class ReinforcementLearningSystem():
         return newState
 
     def rewardFunction(self, current_position, next_state, rewardParam, max_reward=1.0):
-        """
-        will give penalty if: 1) never moved at all 2) attempted illegal move such as out of border
-        will give reward if: 1) actually moved and give reward
-        """
         # Calculate the Euclidean distance between the current position and the goal position
         distance = utils.getTileDistance(current_position, self.goalPoint)
         sumOfObstacles = utils.checkSumOfObstacle(current_position, self.obstacles)
@@ -230,7 +224,6 @@ class FireflyAlgo():
 
 
     def updateBrightnessForTile(self, tileToUpdate, targetPosition):
-
         # tileToUpdate is the nextstate of agents
 
         distanceFromTarget = utils.getTileDistance(tileToUpdate, targetPosition)

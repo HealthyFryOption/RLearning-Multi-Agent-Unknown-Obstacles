@@ -21,9 +21,7 @@ if __name__ == "__main__":
     stages = sorted(data.keys())
     agent_ids = {entry["id"] for stage in data.values() for entry in stage}
 
-    # Create a colormap
-    num_colors = 30
-
+    # Create colour mappings
     colourMapping = cm.get_cmap('tab20b', 20)
     colourMapping2 = cm.get_cmap('tab20c', 20)
 
@@ -49,7 +47,6 @@ if __name__ == "__main__":
     plt.xlabel('Epoch')
     plt.ylabel('Number of Iterations')
     plt.title(title)
-    # plt.yscale('log')  # Apply logarithmic scale to the y-axis
     plt.grid(True)
     
     # Adjust legend

@@ -199,7 +199,7 @@ def runInstanceNormal(id, maxIteration, newModelParam, resultQueue, recordVid):
 
 # ===== Main Function For Running Netlogo Instance =====
 
-# Initialize obstacles and agents starting locations (Multi-processing requires setup outside of Main Loop)
+# Initialize obstacles and agents starting locations
 for mapLine in map:
     for grid in mapLine:
         if grid == 1:
