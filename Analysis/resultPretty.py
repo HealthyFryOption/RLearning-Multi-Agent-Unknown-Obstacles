@@ -55,7 +55,7 @@ if __name__ == "__main__":
     MainDirectory = "./Track/NM/"
     ModeDirectory = "F with Obstacle/"
     MapDirectory = "high/"
-    jsonFile = "NMRecord_1.json"
+    jsonFile = "record_1.json"
 
     title = ""
     epoch = " "

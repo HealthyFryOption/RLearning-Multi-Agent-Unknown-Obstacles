@@ -25,6 +25,9 @@ The three modes that can be tested are:
    * Records
    * Track
    * Track/NM
+
+   It is recommended that inside Track/NM, there should be at least 3 folders named as 'F everywhere', 'F with Obstacle', and 'NF' respectively. Each referring to a specific mode (Firefly Everywhere, Firefly around obstacles, and No Firefly) that the system can run in. Furthermore, inside each folder should contain 3 directories, known as 'low', 'medium', and 'high' which refers to the complexity of the map a mode runs under. Here, please keep whatever data or records stored from training runs for every relevant modes and map complexity as Analysis code is written to operate in this directory. You can further expand it should it be necessary.
+
 5) Create a .env file, containing the variable name netlogoHomeDirectory and netLogoModelFile:
    * netlogoHomeDirectory contains the path to your locally downloaded Netlogo program
    * netLogoModelFile contains the name of your Netlogo created File / Instance
@@ -37,9 +40,9 @@ All training / simulation runs relies on the parameters set in setting.json. Doc
    python Main.py
    ```
 
-2) It will ask whether to use a New or Old model. Any old trained models must be placed inside Model directory. Key in 'Y' if desired to run simulations with a trained model. The system will then require a version number. Provide related version number. For example, provide '2' to use model_2.json. Should you want to run simulations without a pre-trained model, Key in 'N'. Once the simulation end, if a model is saved it will automatically be added into Model directory, with a version number accompanying it. The version number given is the highest version number currently existing inside the directory, incremented by 1. 
+2) It will ask whether to use a New or Old model. Any old trained models must be placed inside Model directory. Key in 'Y' if desired to run simulations with a trained model. The system will then require a version number. Provide related version number. For example, provide '2' to use model_2.json. Should you want to run simulations without a pre-trained model, Key in 'N'. Once the simulation end, if a model is saved it will automatically be added into Model directory, with a version number accompanying it. The version number given is the highest version number currently existing inside the directory, incremented by 1.
 
-3) If the simulation is running under multi-simulations, at the last iteration, all instances will save their recording of simulation inside Recording directory as mp4 files with the format {instance number}_record.mp4 in multi-simulation mode, or NEW_record.mp4 in non multi-simulation mode. Furthermore, after every multi-simulation runs, the iteration data of all previous epochs and of each instances will be saved as a .json file inside Records. The best model from all instances at the last iteration will be chosen as the model to be saved inside Model.
+3) If the simulation is running under multi-simulations, at the last iteration, all instances will save their recording of simulation inside Recording directory as mp4 files with the format {instance number}_record.mp4 in multi-simulation mode, or NEW_record.mp4 in non multi-simulation mode. Furthermore, after every multi-simulation runs, the iteration data of all previous epochs and of each instances will be saved as a .json file inside Records. The best model from all instances at the last iteration will be chosen as the model to be saved inside Model. Furthermore, if the data related to the training run is saved, it will be saved as record_{highest version number in Records directory}.json in Records by default. The data saved can then be moved this into Track/NM wherever.
 
 4) Any new map to be created must be created inside mapDesigns.json following the format of
    ```

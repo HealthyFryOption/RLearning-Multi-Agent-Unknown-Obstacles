@@ -7,7 +7,7 @@ if __name__ == "__main__":
     MainDirectory = "./Track/NM/"
     ModeDirectory = "F with Obstacle/"
     MapDirectory = "medium/"
-    jsonFile = "NMRecord_1.json"
+    jsonFile = "record_1.json"
 
     title = ""
     mapTitle = " "
